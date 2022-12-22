@@ -30,7 +30,7 @@ public class myadapterlike extends RecyclerView.Adapter<HomeAdapter.MyViewHolder
     @NonNull
     @Override
     public HomeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.cardproduct, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cart_item_layout, parent, false);
         return new HomeAdapter.MyViewHolder(view);
     }
 

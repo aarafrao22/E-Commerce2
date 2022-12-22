@@ -29,7 +29,8 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemtext1" />
+        app:layout_constraintTop_toBottomOf="@+id/itemtext1"
+        tools:listitem="@layout/cart_item_layout" />
 
     <TextView
         android:id="@+id/txtBag"
@@ -84,19 +85,13 @@
         android:id="@+id/charge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="532dp"
+        android:layout_marginEnd="16dp"
         android:text="3.95"
         android:textColor="#000"
         android:textSize="14dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-
-        />
+        app:layout_constraintBottom_toTopOf="@+id/totalamount"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/total"
@@ -113,38 +108,32 @@
         android:id="@+id/totalamount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginEnd="16dp"
         android:text="0 GBP"
         android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@id/continue_checkout"
         android:textSize="14dp"
+        android:layout_margin="16dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.994"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-
-        />
+        app:layout_constraintBottom_toBottomOf="@+id/productlistcard"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_checkout"
-        android:layout_width="367dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="588dp"
-
-        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/filled_button"
         android:padding="8dp"
         android:text="Continue to checkout"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:backgroundTint="@color/brown"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

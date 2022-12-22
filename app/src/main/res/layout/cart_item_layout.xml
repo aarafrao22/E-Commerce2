@@ -17,10 +17,9 @@
         android:id="@+id/productImg"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        app:layout_constraintDimensionRatio="1,1"
-        android:background="@drawable/round_outline"
         android:clipToOutline="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1,1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -34,19 +33,29 @@
         android:textColor="@color/black"
         app:layout_constraintWidth_percent="0.6"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/productImg"
-        app:layout_constraintTop_toTopOf="@+id/productImg" />
+        app:layout_constraintStart_toEndOf="@id/productImg"
+        app:layout_constraintTop_toTopOf="@id/productImg" />
 
     <TextView
         android:id="@+id/productDes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="10sp"
         android:textColor="@color/black"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/productName"
         app:layout_constraintTop_toBottomOf="@id/productName"
         app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/productquanity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="0 | S"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/productDes"
+        app:layout_constraintTop_toBottomOf="@id/productDes" />
 
     <TextView
         android:id="@+id/productPrice"
@@ -54,40 +63,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
-        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/productDes"
-        app:layout_constraintTop_toBottomOf="@+id/productDes" />
+        app:layout_constraintTop_toBottomOf="@+id/productquanity" />
 
-    <ImageView
-        android:id="@+id/addToCart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:src="@drawable/ic_baseline_shopping_cart_24"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_baseline_delete_outline_24"
+        app:layout_constraintDimensionRatio="1,1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.4"
-        android:layout_height="28dp"
-        android:hint="@string/select_size"
-        android:backgroundTint="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/productPrice"
-        app:layout_constraintTop_toBottomOf="@+id/productPrice">
-
-        <AutoCompleteTextView
-            android:id="@+id/auto_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="none" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toTopOf="@+id/productPrice" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

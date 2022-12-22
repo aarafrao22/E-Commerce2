@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ import com.aarafrao.ecommerceapp.R;
 import com.aarafrao.ecommerceapp.databinding.FragmentDashboardBinding;
 import com.aarafrao.ecommerceapp.myadaptercard;
 import com.aarafrao.ecommerceapp.ProductModel;
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -36,6 +38,7 @@ public class DashboardFragment extends Fragment {
     String MyPREFERENCES = "MyPrefs";
     TextView totalamount;
     TextView countitem;
+    private MaterialButton btnContinue;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -45,7 +48,12 @@ public class DashboardFragment extends Fragment {
         View root = binding.getRoot();
 
         recyclerView = root.findViewById(R.id.productlistcard);
+        btnContinue = root.findViewById(R.id.continue_checkout);
         recyclerView.setHasFixedSize(true);
+
+        btnContinue.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "CheckOUt", Toast.LENGTH_SHORT).show();
+        });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         totalamount = root.findViewById(R.id.totalamount);
         countitem = root.findViewById(R.id.itemtext);
