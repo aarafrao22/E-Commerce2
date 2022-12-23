@@ -13,17 +13,36 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="0dp">
 
-    <ImageView
-        android:id="@+id/productImg"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imgLayout"
         android:layout_width="0dp"
         android:layout_height="120dp"
         app:layout_constraintDimensionRatio="1,1"
-        android:background="@drawable/round_outline"
-        android:clipToOutline="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/productImg"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/round_outline"
+            android:clipToOutline="true"
+            app:layout_constraintDimensionRatio="1,1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/addTOFav"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/black"
+            android:src="@drawable/heart_add_line" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/productName"
@@ -32,18 +51,18 @@
         android:layout_margin="16dp"
         android:text="TextView"
         android:textColor="@color/black"
-        app:layout_constraintWidth_percent="0.6"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/productImg"
-        app:layout_constraintTop_toTopOf="@+id/productImg" />
+        app:layout_constraintStart_toEndOf="@+id/imgLayout"
+        app:layout_constraintTop_toTopOf="@+id/imgLayout"
+        app:layout_constraintWidth_percent="0.6" />
 
     <TextView
         android:id="@+id/productDes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="10sp"
         android:textColor="@color/black"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/productName"
         app:layout_constraintTop_toBottomOf="@id/productName"
         app:layout_constraintWidth_percent="0.6" />
@@ -54,9 +73,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
-        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/productDes"
         app:layout_constraintTop_toBottomOf="@+id/productDes" />
 
@@ -74,12 +93,12 @@
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.4"
         android:layout_height="28dp"
-        android:hint="@string/select_size"
         android:backgroundTint="@color/black"
+        android:hint="@string/select_size"
         app:layout_constraintStart_toStartOf="@+id/productPrice"
-        app:layout_constraintTop_toBottomOf="@+id/productPrice">
+        app:layout_constraintTop_toBottomOf="@+id/productPrice"
+        app:layout_constraintWidth_percent="0.4">
 
         <AutoCompleteTextView
             android:id="@+id/auto_text"

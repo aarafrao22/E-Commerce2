@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-
     tools:context=".ui.dashboard.DashboardFragment">
 
     <TextView
@@ -36,51 +35,39 @@
         android:id="@+id/txtBag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="165dp"
         android:layout_marginTop="20dp"
-        android:text="Bag"
-
+        android:text="WishList"
         android:textColor="#000"
-        android:textSize="25dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/itemtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="165dp"
-        android:layout_marginTop="50dp"
-        android:text="0 item"
-        android:textColor="#000"
+        android:layout_marginEnd="16dp"
+        android:text="1 Item Liked"
+        android:textColor="@color/grey"
         android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemtext1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-
-        />
+        app:layout_constraintTop_toTopOf="@+id/itemtext1" />
 
     <TextView
         android:id="@+id/itemtext1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="70dp"
-        android:text="Items in the bag are not reserved"
+        android:text="Welcome Sohair"
         android:textColor="#000"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="16dp"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/txtBag" />
 
     <TextView
         android:id="@+id/shipping"
@@ -91,6 +78,7 @@
         android:text="shipping"
         android:textColor="#000"
         android:textSize="18dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,6 +97,7 @@
         android:textColor="#000"
         android:textSize="14dp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.898"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +115,7 @@
         android:text="Total"
         android:textColor="#000"
         android:textSize="14dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
@@ -144,6 +134,7 @@
         android:textColor="#000"
         android:textSize="14dp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.994"
         app:layout_constraintStart_toStartOf="parent"

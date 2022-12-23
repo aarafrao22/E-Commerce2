@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class myadaptercard extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
+public class myadaptercard extends RecyclerView.Adapter<myadaptercard.MyViewHolder> {
     Context context;
     ArrayList<ProductModel> list;
 
@@ -28,14 +30,14 @@ public class myadaptercard extends RecyclerView.Adapter<HomeAdapter.MyViewHolder
 
     @NonNull
     @Override
-    public HomeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public myadaptercard.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.cart_item_layout, parent, false);
-        return new HomeAdapter.MyViewHolder(view);
+        return new myadaptercard.MyViewHolder(view);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull HomeAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull myadaptercard.MyViewHolder holder, int position) {
 
         ProductModel pd = list.get(position);
         holder.productname.setText(pd.getProduct_name());
@@ -55,19 +57,25 @@ public class myadaptercard extends RecyclerView.Adapter<HomeAdapter.MyViewHolder
         return list.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView productname, productdes, productprice, selectbox, productquanty;
         ImageView productimg, addtocard;
+        Button btnDelete;
         AutoCompleteTextView autoCompleteTextView;
 
         public MyViewHolder(@NonNull View itemview) {
             super(itemview);
             productname = itemview.findViewById(R.id.productName);
+            btnDelete = itemview.findViewById(R.id.btnDelete);
             productimg = itemview.findViewById(R.id.productImg);
             productdes = itemview.findViewById(R.id.productDes);
             productprice = itemview.findViewById(R.id.productPrice);
             selectbox = itemview.findViewById(R.id.productquanity);
+
+            btnDelete.setOnClickListener(n -> {
+                Toast.makeText(itemview.getContext(), "ItemDeleted", Toast.LENGTH_SHORT).show();
+            });
         }
     }
 }

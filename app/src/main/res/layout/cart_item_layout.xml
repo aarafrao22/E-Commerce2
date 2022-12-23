@@ -70,12 +70,13 @@
         app:layout_constraintTop_toBottomOf="@+id/productquanity" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnDelete"
         android:layout_width="30dp"
         android:layout_height="0dp"
         android:background="@drawable/ic_baseline_delete_outline_24"
         app:layout_constraintDimensionRatio="1,1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/productName"
+        app:layout_constraintStart_toEndOf="@+id/productPrice"
         app:layout_constraintTop_toTopOf="@+id/productPrice" />
 
 

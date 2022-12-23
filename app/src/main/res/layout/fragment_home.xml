@@ -17,6 +17,7 @@
         android:background="@drawable/filled_button"
         android:backgroundTint="#f0f0f0"
         android:hint="Search"
+        android:textColor="@color/black"
         android:padding="10dp"
         android:textAlignment="textStart"
         android:textSize="14sp"
